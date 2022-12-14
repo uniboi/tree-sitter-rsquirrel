@@ -1,0 +1,10 @@
+===
+globalize all functions in file
+===
+
+globalize_all_functions
+
+---
+
+(source_file
+    (globalize_all_functions_statement))

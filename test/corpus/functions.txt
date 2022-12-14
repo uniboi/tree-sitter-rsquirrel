@@ -1,0 +1,41 @@
+===
+functions with filled bodies
+===
+
+void function identifier(){
+    const int intern = 0x005
+    var a;
+    var a = "abc";
+}
+
+---
+
+(source_file
+    (file_level_statement
+        (function_definition
+            (type
+                (usual_type))
+            (identifier)
+            (function_parameter_list)
+            (block
+            (function_level_statement
+                (const_declaration
+                    (type
+                        (usual_type))
+                    (identifier)
+                    (expression
+                        (literal
+                            (integer_literal)))))
+            (function_level_statement
+                (variable_declaration
+                    (type
+                        (usual_type))
+                    (identifier)))
+            (function_level_statement
+                (variable_declaration
+                    (type
+                        (usual_type))
+                    (identifier)
+                        (expression
+                            (literal
+                            (string_literal)))))))))

@@ -1,0 +1,10 @@
+===
+compile as untyped
+===
+
+untyped
+
+---
+
+(source_file
+    (untyped_statement))

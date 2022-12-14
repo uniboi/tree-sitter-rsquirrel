@@ -1,0 +1,58 @@
+===
+globalize variables with default values
+===
+
+global int i = 1
+global float f = 1.0
+global vector v = <1,2,3>
+global vector fancyVector = <a(), b.b, c["c"]>
+
+---
+
+(source_file
+    (globalize_statement
+        (type
+            (usual_type))
+        (identifier)
+        (literal
+            (integer_literal)))
+    (globalize_statement
+        (type
+            (usual_type))
+        (identifier)
+        (literal
+            (float_literal)))
+    (globalize_statement
+        (type
+            (usual_type))
+        (identifier)
+        (literal
+            (vector_literal
+                (expression
+                    (literal
+                        (integer_literal)))
+                (expression
+                    (literal
+                        (integer_literal)))
+                (expression
+                    (literal
+                        (integer_literal))))))
+        (globalize_statement
+            (type
+                (usual_type))
+            (identifier)
+            (literal
+                (vector_literal
+                    (expression
+                        (identifier)
+                        (expression_call))
+                    (expression
+                        (identifier)
+                        (literal_string_index_access
+                            (identifier)))
+                    (expression
+                        (identifier)
+                        (expression_index_access
+                            (expression
+                                (literal
+                                    (string_literal)))))))))

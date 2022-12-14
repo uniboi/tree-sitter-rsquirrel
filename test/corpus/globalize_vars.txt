@@ -1,0 +1,88 @@
+===
+globalize vars and functions
+===
+
+global int identifier
+global array identifier
+global table identifier
+global array<int> identifier
+global table<string, entity> identifier
+global table<struct, crazyStruct&> ornull identifier
+global array<array<int>> identifier
+global int[2] identifier
+global table<array<struct1&>, _struct2&[15]>[999] ornull identifier
+
+---
+
+(source_file
+    (globalize_statement
+        (type
+            (usual_type))
+        (identifier))
+    (globalize_statement
+        (type
+            (content_holding_type))
+        (identifier))
+    (globalize_statement
+        (type
+            (content_holding_type))
+        (identifier))
+    (globalize_statement
+        (type
+            (content_holding_type
+                (single_content_type
+                    (type
+                        (usual_type)))))
+            (identifier))
+    (globalize_statement
+        (type
+            (content_holding_type
+                (double_content_type
+                    (type
+                        (usual_type))
+                    (type
+                        (usual_type)))))
+        (identifier))
+    (globalize_statement
+        (type
+            (content_holding_type
+                (double_content_type
+                    (type
+                        (usual_type))
+                    (type
+                        (usual_type))))
+                (ornull_typedef))
+            (identifier))
+    (globalize_statement
+        (type
+            (content_holding_type
+                (single_content_type
+                    (type
+                        (content_holding_type
+                            (single_content_type
+                                (type
+                                    (usual_type))))))))
+            (identifier))
+    (globalize_statement
+        (type
+            (usual_type)
+            (static_array_typedef
+                (integer_literal)))
+            (identifier))
+    (globalize_statement
+        (type
+            (content_holding_type
+                (double_content_type
+                    (type
+                        (content_holding_type
+                            (single_content_type
+                                (type
+                                    (usual_type)))))
+                    (type
+                        (usual_type)
+                            (static_array_typedef
+                                (integer_literal)))))
+                        (static_array_typedef
+                            (integer_literal))
+                        (ornull_typedef))
+                        (identifier)))
